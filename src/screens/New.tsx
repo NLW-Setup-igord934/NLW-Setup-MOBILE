@@ -39,9 +39,9 @@ export function New() {
   async function handleCreateNewHabit() {
     try {
       if (!title.trim()) {
-        Alert.alert("Novo Hábito", "Informe o nome do hábito.");
+        return Alert.alert("Novo Hábito", "Informe o nome do hábito.");
       } else if (weekDays.length === 0) {
-        Alert.alert("Novo Hábito", "Informe a recorrência.");
+        return Alert.alert("Novo Hábito", "Informe a recorrência.");
       }
 
       await api.post("/habits", { title, weekDays });
@@ -64,7 +64,7 @@ export function New() {
         <BackButton />
 
         <Text className="mt-6 text-white font-extrabold text-3xl">
-          Criar Habito
+          Criar Hábito
         </Text>
         <Text className="mt-6 text-white font-semibold text-base">
           Qual seu comprometimento?
